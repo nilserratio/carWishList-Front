@@ -5,17 +5,11 @@ const NotFoundPageStyled = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  height: 100vh;
+  padding: 100px 20px;
 
   .notFound-container {
-    padding: 32px 22px;
-    position: absolute;
-    top: 105px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 10px;
-
     &__text {
       color: ${(props) => props.theme.colours.primary};
       font-size: 2.5rem;
