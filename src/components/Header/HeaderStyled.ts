@@ -7,6 +7,7 @@ const HeaderStyled = styled.header`
   align-items: center;
   padding: 16px 22px;
   background-color: ${(prop) => prop.theme.colours.primary};
+  min-width: 275px;
 `;
 
 export default HeaderStyled;

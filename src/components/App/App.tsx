@@ -4,10 +4,7 @@ import ContainerStyled from "../shared/ContainerStyled";
 const App = (): JSX.Element => {
   return (
     <>
-      <Header
-        picture="images/recomotor-logo.webp"
-        alternativeText="Recomotor logo"
-      />
+      <Header />
       <ContainerStyled>
         <p>Recomotor cars wish list</p>
       </ContainerStyled>

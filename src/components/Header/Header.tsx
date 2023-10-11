@@ -1,17 +1,12 @@
 import HeaderStyled from "./HeaderStyled";
 
-interface HeaderProps {
-  picture: string;
-  alternativeText: string;
-}
-
-const Header = ({ picture, alternativeText }: HeaderProps): JSX.Element => {
+const Header = (): React.ReactElement => {
   return (
     <HeaderStyled className="header-container">
       <img
         className="header-container__picture"
-        src={picture}
-        alt={alternativeText}
+        src="images/recomotor-logo.webp"
+        alt="Recomotor logo"
         width={213}
         height={75}
       />
