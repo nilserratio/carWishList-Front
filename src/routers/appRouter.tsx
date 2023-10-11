@@ -1,12 +1,8 @@
-import {
-  Navigate,
-  Outlet,
-  RouteObject,
-  createBrowserRouter,
-} from "react-router-dom";
+import { Navigate, RouteObject, createBrowserRouter } from "react-router-dom";
 import App from "../components/App/App";
 import { paths } from "../utils/paths/paths";
 import { Suspense } from "react";
+import { LazyHomepage } from "./LazyPages";
 
 const routes: RouteObject[] = [
   {
@@ -15,13 +11,13 @@ const routes: RouteObject[] = [
     children: [
       {
         index: true,
-        element: <Navigate to={paths.login} replace />,
+        element: <Navigate to={paths.home} replace />,
       },
       {
-        path: paths.login,
+        path: paths.home,
         element: (
           <Suspense>
-            <Outlet />
+            <LazyHomepage />
           </Suspense>
         ),
       },

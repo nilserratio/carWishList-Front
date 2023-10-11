@@ -4,4 +4,6 @@ export const paths: Paths = {
   root: "/",
   notFound: "*",
   login: "/login",
+  home: "/home",
+  user: "/user",
 };
