@@ -21,7 +21,6 @@ const GlobalStyle = createGlobalStyle`
   h6 {
     margin: 0;
     font: inherit;
-    background-color: ${(props) => props.theme.colours.primary};
   }
 
   ul {
@@ -30,7 +29,9 @@ const GlobalStyle = createGlobalStyle`
     margin-bottom: 0;
   }
 
-  input {
+  input, 
+  textarea, 
+  select {
     font-family: inherit;
     border: none;
   }
@@ -51,10 +52,10 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 
-  img{
-    max-width: 100%;
+  progress {
+    appearance: none;
+    -webkit-appearance: none;
   }
-
 `;
 
 export default GlobalStyle;

@@ -1,12 +1,8 @@
-import {
-  Navigate,
-  Outlet,
-  RouteObject,
-  createBrowserRouter,
-} from "react-router-dom";
+import { Navigate, RouteObject, createBrowserRouter } from "react-router-dom";
 import App from "../components/App/App";
 import { paths } from "../utils/paths/paths";
 import { Suspense } from "react";
+import Homepage from "../pages/Homepage";
 
 const routes: RouteObject[] = [
   {
@@ -21,7 +17,7 @@ const routes: RouteObject[] = [
         path: paths.home,
         element: (
           <Suspense>
-            <Outlet />
+            <Homepage />
           </Suspense>
         ),
       },

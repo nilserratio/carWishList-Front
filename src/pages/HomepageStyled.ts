@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-const AnimalsPageStyled = styled.section`
+const HomepageStyled = styled.section`
   background-color: ${(props) => props.theme.colours.secondaryBackground};
   padding: 32px 22px;
   height: 100vh;
 
-  .animals-container {
+  .homepage-container {
     &__title {
       font-weight: 600;
       font-size: 2rem;
@@ -16,4 +16,4 @@ const AnimalsPageStyled = styled.section`
   }
 `;
 
-export default AnimalsPageStyled;
+export default HomepageStyled;
