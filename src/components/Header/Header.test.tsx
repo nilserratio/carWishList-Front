@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { ThemeProvider } from "styled-components";
-import GlobalStyle from "../../styles/GlobalStyles/GlobalStyles";
+import GlobalStyle from "../../styles/GlobalStyle/GlobalStyle";
 import theme from "../../styles/theme/theme";
 import { RouterProvider } from "react-router-dom";
 import appRouter from "../../routers/appRouter";

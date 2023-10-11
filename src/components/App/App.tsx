@@ -6,7 +6,7 @@ const App = (): JSX.Element => {
     <>
       <Header />
       <ContainerStyled>
-        <p>Recomotor cars wish list</p>
+        <p>Recomotor cars wish list:</p>
       </ContainerStyled>
     </>
   );
