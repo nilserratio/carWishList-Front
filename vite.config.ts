@@ -23,7 +23,6 @@ export default defineConfig({
         "**/GlobalStyle.ts",
         "**/index.ts",
         "**/App.tsx",
-        "**/appRouter.tsx",
       ],
     },
   },
