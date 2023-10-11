@@ -20,6 +20,13 @@ const HeaderStyled = styled.header`
       height: 75px;
       width: 213px;
     }
+
+    &__link {
+      padding: 14px 28px;
+      border-radius: 12px;
+      background-color: ${(props) => props.theme.colours.quatenary};
+      color: ${(props) => props.theme.colours.primary};
+    }
   }
 `;
 
