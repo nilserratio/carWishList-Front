@@ -5,6 +5,8 @@ const LoginPageStyled = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 32px 22px;
+  height: 100vh;
 
   .login-container {
     &__title {
