@@ -1,21 +1,16 @@
-import { render, screen } from "@testing-library/react";
-import { ThemeProvider } from "styled-components";
-import GlobalStyle from "../../styles/GlobalStyle/GlobalStyle";
-import theme from "../../styles/theme/theme";
-import { RouterProvider } from "react-router-dom";
-import appRouter from "../../routers/appRouter";
+import {
+  renderWithProviders,
+  wrapWithRouter,
+} from "../../utils/testUtils/testUtils";
+import { screen } from "@testing-library/react";
+import Header from "./Header";
 
 describe("Given a Header component", () => {
   describe("When it is rendered", () => {
     test("Then it should show a picture with an alternative text that says 'Recomotor logo'", () => {
       const expectedAlternativeText = "Recomotor logo";
 
-      render(
-        <ThemeProvider theme={theme}>
-          <GlobalStyle />
-          <RouterProvider router={appRouter} />
-        </ThemeProvider>
-      );
+      renderWithProviders(wrapWithRouter(<Header />));
 
       const image = screen.getByRole("img", { name: expectedAlternativeText });
 
