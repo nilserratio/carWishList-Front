@@ -1,10 +1,6 @@
 import styled from "styled-components";
 
 const LoginPageStyled = styled.section`
-  background: ${(props) => props.theme.colours.secondaryBackground};
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 32px 22px;
   height: 100vh;
 

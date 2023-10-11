@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const HomepageStyled = styled.section`
-  background-color: ${(props) => props.theme.colours.secondaryBackground};
   padding: 32px 22px;
   height: 100vh;
 

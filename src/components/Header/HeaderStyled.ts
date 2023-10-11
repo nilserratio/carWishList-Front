@@ -8,6 +8,7 @@ const HeaderStyled = styled.header`
   padding: 16px 22px;
   background-color: ${(prop) => prop.theme.colours.primary};
   min-width: 275px;
+  border-bottom: 1px solid ${(prop) => prop.theme.colours.secondaryBackground};
 
   .header-container {
     &__anchor.active {
