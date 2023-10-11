@@ -7,6 +7,7 @@ import { RootState, setupStore, store } from "../../store";
 import theme from "../../styles/theme/theme";
 import { RouterProvider, createMemoryRouter } from "react-router-dom";
 import GlobalStyle from "../../styles/GlobalStyle/GlobalStyle";
+import { paths } from "../paths/paths";
 
 export const renderWithProviders = (
   ui: React.ReactElement,
@@ -29,7 +30,7 @@ export const renderWithProviders = (
 export const wrapWithRouter = (ui: React.ReactElement) => {
   const routes = [
     {
-      path: "/",
+      path: paths.root,
       element: ui,
     },
   ];
