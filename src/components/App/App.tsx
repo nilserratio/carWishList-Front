@@ -1,15 +1,5 @@
-import Header from "../Header/Header";
-import ContainerStyled from "../shared/ContainerStyled";
+import Layout from "../Layout/Layout";
 
-const App = (): JSX.Element => {
-  return (
-    <>
-      <Header />
-      <ContainerStyled>
-        <p>Recomotor cars wish list:</p>
-      </ContainerStyled>
-    </>
-  );
-};
+const App = (): React.ReactElement => <Layout />;
 
 export default App;
