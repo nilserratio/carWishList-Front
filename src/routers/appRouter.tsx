@@ -15,10 +15,10 @@ const routes: RouteObject[] = [
     children: [
       {
         index: true,
-        element: <Navigate to={paths.login} replace />,
+        element: <Navigate to={paths.home} replace />,
       },
       {
-        path: paths.login,
+        path: paths.home,
         element: (
           <Suspense>
             <Outlet />
