@@ -8,6 +8,7 @@ const HeaderStyled = styled.header`
   padding: 16px 22px;
   background-color: ${(prop) => prop.theme.colours.primary};
   min-width: 275px;
+  border-bottom: 1px solid ${(prop) => prop.theme.colours.secondaryBackground};
 
   .header-container {
     &__anchor.active {
@@ -18,6 +19,13 @@ const HeaderStyled = styled.header`
     &__anchor {
       height: 75px;
       width: 213px;
+    }
+
+    &__link {
+      padding: 14px 28px;
+      border-radius: 12px;
+      background-color: ${(props) => props.theme.colours.quatenary};
+      color: ${(props) => props.theme.colours.primary};
     }
   }
 `;

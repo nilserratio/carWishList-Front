@@ -14,6 +14,9 @@ const Header = (): React.ReactElement => {
           height={75}
         />
       </NavLink>
+      <NavLink to={paths.login} className="header-container__link">
+        Sign In
+      </NavLink>
     </HeaderStyled>
   );
 };

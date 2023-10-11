@@ -13,6 +13,7 @@ import { paths } from "../../utils/paths/paths";
 import App from "../App/App";
 import Homepage from "../../pages/Homepage/Homepage";
 import userEvent from "@testing-library/user-event";
+import LoginPage from "../../pages/LoginPage/LoginPage";
 
 describe("Given a Header component", () => {
   const expectedAlternativeText = "Recomotor logo";
@@ -48,6 +49,32 @@ describe("Given a Header component", () => {
       await userEvent.click(adroLogo);
 
       expect(router.state.location.pathname).toStrictEqual(paths.home);
+    });
+  });
+
+  describe("When it's rendered and the user clicks the 'Sign In' link", () => {
+    test("Then it should redirect the user to the login page", async () => {
+      const expectedText = "Sign In";
+
+      const route: RouteObject[] = [
+        {
+          path: paths.root,
+          element: <App />,
+        },
+        {
+          path: paths.login,
+          element: <LoginPage />,
+        },
+      ];
+
+      const router = createMemoryRouter(route);
+
+      renderWithProviders(<RouterProvider router={router} />);
+
+      const signInLink = screen.getByText(expectedText);
+      await userEvent.click(signInLink);
+
+      expect(router.state.location.pathname).toStrictEqual(paths.login);
     });
   });
 });
