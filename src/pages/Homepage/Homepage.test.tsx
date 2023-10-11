@@ -2,7 +2,7 @@ import { screen } from "@testing-library/react";
 import {
   renderWithProviders,
   wrapWithRouter,
-} from "../utils/testUtils/testUtils";
+} from "../../utils/testUtils/testUtils";
 import Homepage from "./Homepage";
 
 describe("Given a Homepage component", () => {
