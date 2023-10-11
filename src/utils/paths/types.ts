@@ -1,0 +1,5 @@
+export interface Paths {
+  root: string;
+  notFound: string;
+  login: string;
+}
