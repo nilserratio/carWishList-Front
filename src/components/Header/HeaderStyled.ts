@@ -27,6 +27,13 @@ const HeaderStyled = styled.header`
       background-color: ${(props) => props.theme.colours.quatenary};
       color: ${(props) => props.theme.colours.primary};
     }
+
+    &__button {
+      padding: 14px 28px;
+      border-radius: 12px;
+      background-color: ${(props) => props.theme.colours.quinary};
+      color: ${(props) => props.theme.colours.primary};
+    }
   }
 `;
 
