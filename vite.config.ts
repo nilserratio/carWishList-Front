@@ -21,6 +21,7 @@ export default defineConfig({
         "**/*.d.ts",
         "**/main.tsx",
         "**/index.ts",
+        "**/App.tsx",
       ],
     },
   },
