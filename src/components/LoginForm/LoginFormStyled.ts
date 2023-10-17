@@ -33,6 +33,7 @@ const LoginFormStyled = styled.form`
         color: ${(props) => props.theme.colours.secondary};
         background-color: transparent;
         border: 3px solid;
+        font-weight: bold;
       }
     }
   }
