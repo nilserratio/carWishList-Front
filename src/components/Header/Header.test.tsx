@@ -14,6 +14,7 @@ import App from "../App/App";
 import Homepage from "../../pages/Homepage/Homepage";
 import userEvent from "@testing-library/user-event";
 import LoginPage from "../../pages/LoginPage/LoginPage";
+import { userLoggedStateMock } from "../../mocks/user/userMocks";
 
 describe("Given a Header component", () => {
   const expectedAlternativeText = "Recomotor logo";
@@ -73,6 +74,30 @@ describe("Given a Header component", () => {
 
       const signInLink = screen.getByText(expectedText);
       await userEvent.click(signInLink);
+
+      expect(router.state.location.pathname).toStrictEqual(paths.login);
+    });
+  });
+
+  describe("When the user is logged and clicks the 'Sing out' button", () => {
+    test("Then it shoul logout the user and redirects him to the '/login' path", async () => {
+      const buttonText = "Sign out";
+
+      const route: RouteObject[] = [
+        {
+          path: "/",
+          element: <App />,
+        },
+      ];
+
+      const router = createMemoryRouter(route);
+
+      renderWithProviders(<RouterProvider router={router} />, {
+        user: userLoggedStateMock,
+      });
+
+      const logoutButton = screen.getByRole("button", { name: buttonText });
+      await userEvent.click(logoutButton);
 
       expect(router.state.location.pathname).toStrictEqual(paths.login);
     });
