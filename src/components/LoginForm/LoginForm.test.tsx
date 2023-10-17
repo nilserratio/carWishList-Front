@@ -45,8 +45,8 @@ describe("Given a LoginForm component", () => {
     });
   });
 
-  describe("When it's rendered and the user types 'John' in the username and password text field", () => {
-    test("Then it should show 'John' in the username field", async () => {
+  describe("When it's rendered and the user types '011' in the username and password text field", () => {
+    test("Then it should show '011' in the username field", async () => {
       renderWithProviders(<LoginForm actionOnSubmit={mockOnSubmit} />);
 
       const usernameTextField = screen.getByLabelText(usernameText);
@@ -56,7 +56,7 @@ describe("Given a LoginForm component", () => {
       expect(usernameTextField).toHaveValue(usernameInputText);
     });
 
-    test("Then it should show 'John' in the password field", async () => {
+    test("Then it should show '011' in the password field", async () => {
       renderWithProviders(<LoginForm actionOnSubmit={mockOnSubmit} />);
 
       const passwordTextField = screen.getByLabelText(passwordText);
