@@ -19,3 +19,8 @@ export const loginUserDataMock: UserCredentials = {
 
 export const tokenMock =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NTJhNjdmYjFhZTQxOTc4MjU5NmY1NWMiLCJuYW1lIjoiMDExIiwiaWF0IjoxNjk3NDU0Njg1LCJleHAiOjE2OTgwNTk0ODV9.NK8Uah881IzrDuYMHS5w-44EElIYPtMQ39rs9KWCNOc";
+
+export const invalidLoginUserDataMock: UserCredentials = {
+  username: "",
+  password: "",
+};
