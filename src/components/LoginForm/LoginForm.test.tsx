@@ -1,7 +1,7 @@
 import { screen } from "@testing-library/react";
 import { vi } from "vitest";
 import userEvent from "@testing-library/user-event";
-import { loginUserDataMock } from "../../mocks/userMocks";
+import { loginUserDataMock } from "../../mocks/user/userMocks";
 import { renderWithProviders } from "../../utils/testUtils/testUtils";
 import LoginForm from "./LoginForm";
 
