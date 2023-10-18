@@ -2,7 +2,8 @@ import { useEffect } from "react";
 import { useAppDispatch } from "../../store";
 import HomepageStyled from "./HomepageStyled";
 import { loadCarsActionCreator } from "../../store/cars/carsSlice";
-import { carsMock } from "../../mocks/cars/carsMocks";
+import { carsBrandMock, carsMock } from "../../mocks/cars/carsMocks";
+import CarsList from "../../components/CarsList/CarsList";
 
 const Homepage = (): React.ReactElement => {
   const dispatch = useAppDispatch();
@@ -14,6 +15,7 @@ const Homepage = (): React.ReactElement => {
   return (
     <HomepageStyled className="homepage-container">
       <h1 className="homepage-container__title">Recomotor favorite cars</h1>
+      <CarsList modelos={carsBrandMock} nombre="Seat" />
     </HomepageStyled>
   );
 };

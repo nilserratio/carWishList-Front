@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const HomepageStyled = styled.section`
+const HomepageStyled = styled.main`
   padding: 32px 22px;
   height: 100vh;
 
