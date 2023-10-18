@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const LoginPageStyled = styled.section`
+const LoginPageStyled = styled.main`
   padding: 32px 22px;
   height: 100vh;
 
