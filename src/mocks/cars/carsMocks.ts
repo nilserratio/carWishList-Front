@@ -1,6 +1,9 @@
-import { CarBrandDataStructure, CarDataStructure } from "../../types";
+import {
+  CarBrandsDataStructure,
+  CarDataStructure,
+} from "../../store/cars/types";
 
-export const carsMock: CarBrandDataStructure[] = [
+export const carsMock: CarBrandsDataStructure[] = [
   {
     nombre: "Seat",
     modelos: [
@@ -60,3 +63,14 @@ export const carsBrandMock: CarDataStructure[] = [
     img: "https://www.topgear.com/sites/default/files/images/news-article/carousel/2019/01/4e9fb55f7ef03a11029c2fb4864fb621/20181201_siemoneitracing_vader_leoncuprast_001_front34_online.jpg",
   },
 ];
+
+export const carMock: CarDataStructure = {
+  id: "001",
+  nombre: "Arona",
+  img: "https://www.diariomotor.com/imagenes/2018/03/skoda_lanzamiento_su_seat_arona_00.jpg",
+};
+
+export const carBrandMock: CarBrandsDataStructure = {
+  modelos: [],
+  nombre: "Seat",
+};
