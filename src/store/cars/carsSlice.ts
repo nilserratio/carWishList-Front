@@ -7,7 +7,7 @@ export const initialCarsState: CarsStateStructure = {
 };
 
 const carssSlice = createSlice({
-  name: "cars",
+  name: "marcas",
   initialState: initialCarsState,
   reducers: {
     loadCars: (
@@ -15,7 +15,7 @@ const carssSlice = createSlice({
       action: PayloadAction<CarBrandDataStructure[]>
     ) => ({
       ...currentCarsState,
-      cars: [...action.payload],
+      marcas: [...action.payload],
     }),
   },
 });
