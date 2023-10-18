@@ -1,24 +1,23 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { CarsStateStructure } from "./types";
-import { CarBrandDataStructure } from "../../types";
+import { CarBrandsDataStructure, CarsStateStructure } from "./types";
 
 export const initialCarsState: CarsStateStructure = {
   marcas: [],
 };
 
-const carssSlice = createSlice({
-  name: "marcas",
+const carsSlice = createSlice({
+  name: "cars",
   initialState: initialCarsState,
   reducers: {
     loadCars: (
       currentCarsState: CarsStateStructure,
-      action: PayloadAction<CarBrandDataStructure[]>
-    ) => ({
+      action: PayloadAction<CarBrandsDataStructure[]>
+    ): CarsStateStructure => ({
       ...currentCarsState,
       marcas: [...action.payload],
     }),
   },
 });
 
-export const { loadCars: loadCarsActionCreator } = carssSlice.actions;
-export const carsReducer = carssSlice.reducer;
+export const { loadCars: loadCarsActionCreator } = carsSlice.actions;
+export const carsReducer = carsSlice.reducer;
