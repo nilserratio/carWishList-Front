@@ -4,7 +4,7 @@ import { CarsStateStructure } from "../types";
 
 describe("Given a loadACars reducer", () => {
   describe("When it recieves an empty list of cars and a loadCars action with 2 cars", () => {
-    test("Then it should return a new state with the 2 animals", () => {
+    test("Then it should return a new state with the 2 cars", () => {
       const expetedCarsState: CarsStateStructure = {
         marcas: carsMock,
       };
