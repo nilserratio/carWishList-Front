@@ -10,7 +10,7 @@ export const handlers = [
     return res(ctx.status(200), ctx.json({ token: tokenMock }));
   }),
   rest.get(`${apiUrl}${paths.cars}`, (_req, res, ctx) => {
-    return res(ctx.status(200), ctx.json({ cars: carsMock }));
+    return res(ctx.status(200), ctx.json({ marcas: carsMock }));
   }),
 ];
 
