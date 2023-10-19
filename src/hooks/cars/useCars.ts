@@ -1,17 +1,19 @@
 import axios from "axios";
 import { paths } from "../../utils/paths/paths";
 import { useCallback } from "react";
-import { CarDataStructure } from "../../store/cars/types";
+import { CarBrandsDataStructure } from "../../store/cars/types";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
 const useCars = () => {
-  const getCars = useCallback(async (): Promise<CarDataStructure[]> => {
+  const getCars = useCallback(async (): Promise<CarBrandsDataStructure[]> => {
     const {
-      data: { cars },
-    } = await axios.get<{ cars: CarDataStructure[] }>(`${apiUrl}${paths.cars}`);
+      data: { marcas },
+    } = await axios.get<{ marcas: CarBrandsDataStructure[] }>(
+      `${apiUrl}${paths.cars}`
+    );
 
-    return cars;
+    return marcas;
   }, []);
 
   return { getCars };
