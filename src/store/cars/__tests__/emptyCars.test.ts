@@ -1,21 +1,21 @@
 import { carsMock } from "../../../mocks/cars/carsMocks";
-import { carsReducer, loadCarsActionCreator } from "../carsSlice";
+import { carsReducer, empltyCarsActionCreator } from "../carsSlice";
 import { CarsStateStructure } from "../types";
 
-describe("Given a loadCars reducer", () => {
-  describe("When it recieves an empty list of cars and a loadCars action with 2 cars", () => {
-    test("Then it should return a new state with the 2 cars", () => {
+describe("Given a emptyCars reducer", () => {
+  describe("When it recieves an list of cars and a emptyCars action", () => {
+    test("Then it should return a new state with an empty list of cars", () => {
       const expetedCarsState: CarsStateStructure = {
-        marcas: carsMock,
+        marcas: [],
       };
 
       const currentCarsState: CarsStateStructure = {
-        marcas: [],
+        marcas: carsMock,
       };
 
       const newCarState: CarsStateStructure = carsReducer(
         currentCarsState,
-        loadCarsActionCreator(carsMock)
+        empltyCarsActionCreator()
       );
 
       expect(newCarState).toStrictEqual(expetedCarsState);
