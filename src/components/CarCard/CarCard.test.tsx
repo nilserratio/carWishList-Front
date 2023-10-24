@@ -24,7 +24,15 @@ describe("Given a CarCard component", () => {
       const buttonText = "Remove from favorites";
 
       renderWithProviders(
-        <CarCard modelo={carMock} marca={carBrandMock} isFavorite={true} />
+        <CarCard modelo={carMock} marca={carBrandMock} isFavorite={true} />,
+        {
+          user: {
+            id: "",
+            token: "",
+            isLogged: true,
+            favoriteCars: [carMock.id],
+          },
+        }
       );
 
       const button = screen.getByRole("button", { name: buttonText });
@@ -38,7 +46,15 @@ describe("Given a CarCard component", () => {
       const buttonText = "Add to favorites";
 
       renderWithProviders(
-        <CarCard modelo={carMock} marca={carBrandMock} isFavorite={false} />
+        <CarCard modelo={carMock} marca={carBrandMock} isFavorite={false} />,
+        {
+          user: {
+            id: "",
+            token: "",
+            isLogged: true,
+            favoriteCars: [carMock.id],
+          },
+        }
       );
 
       const AddToFavoritesbutton = screen.getByRole("button", {
@@ -56,7 +72,15 @@ describe("Given a CarCard component", () => {
       const buttonText = "Remove from favorites";
 
       renderWithProviders(
-        <CarCard modelo={carMock} marca={carBrandMock} isFavorite={true} />
+        <CarCard modelo={carMock} marca={carBrandMock} isFavorite={true} />,
+        {
+          user: {
+            id: "",
+            token: "",
+            isLogged: true,
+            favoriteCars: [carMock.id],
+          },
+        }
       );
 
       const AddToFavoritesbutton = screen.getByRole("button", {

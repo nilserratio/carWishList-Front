@@ -26,7 +26,7 @@ const CarCard = ({
   const [isFavoriteState, setIsFavorite] = useState(isFavorite);
   const dispatch = useAppDispatch();
   const { addToFavorites, removeFromFavorites } = useUser();
-  const { id: userId } = useAppSelector((state) => state.user);
+  const { id: userId, isLogged } = useAppSelector((state) => state.user);
 
   const toggleFavorite = () => {
     if (isFavorite) {
@@ -38,6 +38,8 @@ const CarCard = ({
     }
     setIsFavorite(!isFavorite);
   };
+
+  const isUserLogged = isLogged;
 
   return (
     <CarCardStyled className="car-card">
@@ -52,11 +54,13 @@ const CarCard = ({
         <h3>{brandName}</h3>
         <h2>{nombre}</h2>
       </div>
-      <Button
-        className="car-card__favorite-button"
-        text={isFavoriteState ? "Remove from favorites" : "Add to favorites"}
-        actionOnClick={toggleFavorite}
-      />
+      {isUserLogged && (
+        <Button
+          className="car-card__favorite-button"
+          text={isFavoriteState ? "Remove from favorites" : "Add to favorites"}
+          actionOnClick={toggleFavorite}
+        />
+      )}
     </CarCardStyled>
   );
 };

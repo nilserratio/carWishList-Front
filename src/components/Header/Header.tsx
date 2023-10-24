@@ -9,7 +9,6 @@ import { empltyCarsActionCreator } from "../../store/cars/carsSlice";
 
 const Header = (): React.ReactElement => {
   const isLogged = useAppSelector((state) => state.user.isLogged);
-
   const dispatch = useAppDispatch();
   const { removeToken } = useLocalStorage();
   const navigate = useNavigate();

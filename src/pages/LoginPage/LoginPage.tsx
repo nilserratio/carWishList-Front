@@ -8,6 +8,7 @@ import { UserCredentials } from "../../types";
 import { loginUserActionCreator } from "../../store/user/userSlice";
 import useLocalStorage from "../../hooks/localStorage/useLocalStorage";
 import { UserFavoritesStructure } from "../../store/user/types";
+import { empltyCarsActionCreator } from "../../store/cars/carsSlice";
 
 const LoginPage = (): React.ReactElement => {
   const { getToken } = useUser();
@@ -29,6 +30,7 @@ const LoginPage = (): React.ReactElement => {
         } as UserFavoritesStructure)
       );
       setToken("token", token);
+      dispatch(empltyCarsActionCreator());
       navigate("/home", { replace: true });
     }
   };

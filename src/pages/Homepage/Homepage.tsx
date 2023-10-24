@@ -16,11 +16,17 @@ const Homepage = (): React.ReactElement => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const favoriteCars: string[] = await getFavoriteCars(id);
-      const carsList: CarBrandsDataStructure[] = await getCars();
+      if (!id) {
+        const carsList: CarBrandsDataStructure[] = await getCars();
 
-      dispatch(loadUserFavoritesActionCreator(favoriteCars));
-      dispatch(loadCarsActionCreator(carsList));
+        dispatch(loadCarsActionCreator(carsList));
+      } else {
+        const favoriteCars: string[] = await getFavoriteCars(id);
+        const carsList: CarBrandsDataStructure[] = await getCars();
+
+        dispatch(loadUserFavoritesActionCreator(favoriteCars));
+        dispatch(loadCarsActionCreator(carsList));
+      }
     };
 
     fetchData();
