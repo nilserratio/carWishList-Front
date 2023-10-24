@@ -6,3 +6,7 @@ export interface UserTokenStructure {
 export interface UserStateStructure extends UserTokenStructure {
   isLogged: boolean;
 }
+
+export interface UserFavoritesStructure extends UserStateStructure {
+  favoriteCars: string[];
+}
