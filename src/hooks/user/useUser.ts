@@ -1,4 +1,5 @@
 import axios from "axios";
+import { useCallback } from "react";
 import { UserCredentials } from "../../types";
 import { paths } from "../../utils/paths/paths";
 
@@ -20,7 +21,18 @@ const useUser = () => {
     }
   };
 
-  return { getToken };
+  const addToFavorites = useCallback(async (carId: string, _id: string) => {
+    try {
+      await axios.post(`${apiUrl}${paths.user}${paths.favorites}${paths.add}`, {
+        carId,
+        _id,
+      });
+    } catch (error) {
+      throw new Error("Car not added to favorites");
+    }
+  }, []);
+
+  return { getToken, addToFavorites };
 };
 
 export default useUser;
