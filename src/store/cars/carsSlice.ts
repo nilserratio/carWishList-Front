@@ -16,8 +16,14 @@ const carsSlice = createSlice({
       ...currentCarsState,
       marcas: [...action.payload],
     }),
+    empltyCars: (): CarsStateStructure => ({
+      ...initialCarsState,
+    }),
   },
 });
 
-export const { loadCars: loadCarsActionCreator } = carsSlice.actions;
+export const {
+  loadCars: loadCarsActionCreator,
+  empltyCars: empltyCarsActionCreator,
+} = carsSlice.actions;
 export const carsReducer = carsSlice.reducer;

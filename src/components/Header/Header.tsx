@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from "../../store";
 import useLocalStorage from "../../hooks/localStorage/useLocalStorage";
 import { logoutUserActionCreator } from "../../store/user/userSlice";
 import Button from "../Button/Button";
+import { empltyCarsActionCreator } from "../../store/cars/carsSlice";
 
 const Header = (): React.ReactElement => {
   const isLogged = useAppSelector((state) => state.user.isLogged);
@@ -16,6 +17,7 @@ const Header = (): React.ReactElement => {
   const actionOnClick = () => {
     dispatch(logoutUserActionCreator());
     removeToken("token");
+    dispatch(empltyCarsActionCreator());
     navigate(paths.login);
   };
 
