@@ -4,6 +4,11 @@ import CarsListStyled from "./CarsListStyled";
 
 const CarsList = (): React.ReactElement => {
   const marcas = useAppSelector((state) => state.cars.marcas);
+  const { favoriteCars } = useAppSelector((state) => state.user);
+
+  const isModelInFavorites = (modelId: string) => {
+    return favoriteCars.some((favoriteModelId) => favoriteModelId === modelId);
+  };
 
   return (
     <CarsListStyled className="carsList-container" aria-label="list of cars">
@@ -13,7 +18,11 @@ const CarsList = (): React.ReactElement => {
           <ul className="carsList-container__model-list">
             {marca.modelos.map((modelo) => (
               <li key={modelo.id} className="carsList-container__model-item">
-                <CarCard modelo={modelo} marca={marca} />
+                <CarCard
+                  modelo={modelo}
+                  marca={marca}
+                  isFavorite={isModelInFavorites(modelo.id)}
+                />
               </li>
             ))}
           </ul>
