@@ -32,7 +32,24 @@ const useUser = () => {
     }
   }, []);
 
-  return { getToken, addToFavorites };
+  const removeFromFavorites = useCallback(
+    async (carId: string, _id: string) => {
+      try {
+        await axios.post(
+          `${apiUrl}${paths.user}${paths.favorites}${paths.remove}`,
+          {
+            carId,
+            _id,
+          }
+        );
+      } catch (error) {
+        throw new Error("Car not remove from favorites");
+      }
+    },
+    []
+  );
+
+  return { getToken, addToFavorites, removeFromFavorites };
 };
 
 export default useUser;
