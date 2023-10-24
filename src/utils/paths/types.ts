@@ -5,4 +5,7 @@ export interface Paths {
   home: string;
   user: string;
   cars: string;
+  favorites: string;
+  add: string;
+  remove: string;
 }

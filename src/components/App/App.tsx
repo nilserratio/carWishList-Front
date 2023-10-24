@@ -4,7 +4,7 @@ import useToken from "../../hooks/token/useToken";
 import { useAppDispatch } from "../../store";
 import Layout from "../Layout/Layout";
 import { loginUserActionCreator } from "../../store/user/userSlice";
-import { UserTokenStructure } from "../../store/user/types";
+import { UserFavoritesStructure } from "../../store/user/types";
 
 const App = (): React.ReactElement => {
   const { getToken } = useLocalStorage();
@@ -20,7 +20,7 @@ const App = (): React.ReactElement => {
         loginUserActionCreator({
           ...userData,
           token,
-        } as UserTokenStructure)
+        } as UserFavoritesStructure)
       );
     }
   }, [decodeToken, dispatch, getToken]);

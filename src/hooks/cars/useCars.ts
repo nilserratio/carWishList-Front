@@ -1,6 +1,6 @@
 import axios from "axios";
-import { paths } from "../../utils/paths/paths";
 import { useCallback } from "react";
+import { paths } from "../../utils/paths/paths";
 import { CarBrandsDataStructure } from "../../store/cars/types";
 
 const apiUrl = import.meta.env.VITE_API_URL;

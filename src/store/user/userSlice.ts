@@ -1,10 +1,11 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { UserStateStructure, UserTokenStructure } from "../user/types";
+import { UserFavoritesStructure } from "../user/types";
 
-const initialUserState: UserStateStructure = {
+const initialUserState: UserFavoritesStructure = {
   id: "",
   token: "",
   isLogged: false,
+  favoriteCars: [],
 };
 
 const userSlice = createSlice({
@@ -12,19 +13,31 @@ const userSlice = createSlice({
   initialState: initialUserState,
   reducers: {
     loginUser: (
-      _currentUserState: UserStateStructure,
-      action: PayloadAction<UserTokenStructure>
-    ) => ({
+      currentUserState: UserFavoritesStructure,
+      action: PayloadAction<UserFavoritesStructure>
+    ): UserFavoritesStructure => ({
       ...action.payload,
       isLogged: true,
+      favoriteCars: currentUserState.favoriteCars,
     }),
 
-    logoutUser: (): UserStateStructure => ({ ...initialUserState }),
+    logoutUser: (): UserFavoritesStructure => ({
+      ...initialUserState,
+    }),
+
+    addFavoriteCar: (
+      currentUserState: UserFavoritesStructure,
+      action: PayloadAction<string>
+    ): UserFavoritesStructure => ({
+      ...currentUserState,
+      favoriteCars: [...currentUserState.favoriteCars, action.payload],
+    }),
   },
 });
 
 export const {
   loginUser: loginUserActionCreator,
   logoutUser: logoutUserActionCreator,
+  addFavoriteCar: addFavoriteCarActionCreator,
 } = userSlice.actions;
 export const userReducer = userSlice.reducer;
