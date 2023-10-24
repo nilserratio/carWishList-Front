@@ -32,6 +32,16 @@ const userSlice = createSlice({
       ...currentUserState,
       favoriteCars: [...currentUserState.favoriteCars, action.payload],
     }),
+
+    removeFavoriteCar: (
+      currentUserState: UserFavoritesStructure,
+      action: PayloadAction<string>
+    ): UserFavoritesStructure => ({
+      ...currentUserState,
+      favoriteCars: currentUserState.favoriteCars.filter(
+        (carId) => carId !== action.payload
+      ),
+    }),
   },
 });
 
@@ -39,5 +49,6 @@ export const {
   loginUser: loginUserActionCreator,
   logoutUser: logoutUserActionCreator,
   addFavoriteCar: addFavoriteCarActionCreator,
+  removeFavoriteCar: removeFavoriteCarActionCreator,
 } = userSlice.actions;
 export const userReducer = userSlice.reducer;
