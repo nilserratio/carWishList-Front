@@ -5,7 +5,7 @@ import {
 import { UserCredentials } from "../../types";
 
 export const decodedTokenMock: Pick<UserTokenStructure, "id"> = {
-  id: "652a67fb1ae419782596f55a",
+  id: "652a67fb1ae419782596f55c",
 };
 
 export const userTokenDataMock: UserFavoritesStructure = {
@@ -42,4 +42,11 @@ export const tokenMock =
 export const invalidLoginUserDataMock: UserCredentials = {
   username: "",
   password: "",
+};
+
+export const userFavoritesDataMock: UserFavoritesStructure = {
+  id: "",
+  token: "",
+  isLogged: false,
+  favoriteCars: ["6030b5d7b680ca87b2a1bf10"],
 };
