@@ -1,13 +1,33 @@
-# Boilerplate for React apps
+# RECOMOTOR wish list
 
-With Vite + TypeScript
+RECOMOTOR wish list is an application web that alow the any Recomotor worker, set cars to favorites from a cars list. Also alows to the users to se all cars and it's details to all users.
 
-## Scripts
+## Tech stack
 
-`npm run dev`: starts a development server
+RECOMOTOR wish list is built using the following technologies:
 
-`npm run build`: builds the app
+- TypeScript
+- React
+- Node
+- Express
+- Redux Toolkit
+- Styled components
+- Jest & Vitest & Supertest & React Testing Library (RTL)
+- MSW / Axios
+- React-router-dom
+- MongoDB & Mongoose & Mongo-Memory-Server
+- Husky-Hooks
+- ESLint & Prettier
+- Git & Github
+- Github Actions
+- Postman
+- Netlify
+- SonarCloud & Lighthoue
+- MODELO DE RAMAS
+- PIPELINE CI/CS
 
-`npm run preview`: runs the built app
+## Author
 
-`npm run lint`: runs ESLint
+Nil Serra Tió
+
+https://github.com/nilserratio

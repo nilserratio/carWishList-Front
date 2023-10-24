@@ -49,7 +49,21 @@ const useUser = () => {
     []
   );
 
-  return { getToken, addToFavorites, removeFromFavorites };
+  const getFavoriteCars = useCallback(async (_id: string) => {
+    try {
+      const {
+        data: { favoriteCars },
+      } = await axios.get<{ favoriteCars: string[] }>(
+        `${apiUrl}${paths.user}${paths.favorites}/${_id}`
+      );
+
+      return favoriteCars;
+    } catch (error) {
+      throw new Error("Can't get the user favorite cars");
+    }
+  }, []);
+
+  return { getToken, addToFavorites, removeFromFavorites, getFavoriteCars };
 };
 
 export default useUser;

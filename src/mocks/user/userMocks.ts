@@ -50,3 +50,11 @@ export const userFavoritesDataMock: UserFavoritesStructure = {
   isLogged: false,
   favoriteCars: ["6030b5d7b680ca87b2a1bf10"],
 };
+
+export const userNotFavoritesDataMock: UserFavoritesStructure = {
+  id: "652a67fb1ae419782596f55c",
+  token:
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NTJhNjdmYjFhZTQxOTc4MjU5NmY1NWMiLCJuYW1lIjoiMDExIiwiaWF0IjoxNjk3NDU0Njg1LCJleHAiOjE2OTgwNTk0ODV9.NK8Uah881IzrDuYMHS5w-44EElIYPtMQ39rs9KWCNOc",
+  isLogged: true,
+  favoriteCars: [],
+};

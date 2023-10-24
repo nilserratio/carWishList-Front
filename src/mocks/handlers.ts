@@ -1,5 +1,5 @@
 import { rest } from "msw";
-import { tokenMock } from "./user/userMocks";
+import { tokenMock, userTokenDataMock } from "./user/userMocks";
 import { paths } from "../utils/paths/paths";
 import { carsMock } from "./cars/carsMocks";
 
@@ -37,6 +37,16 @@ export const handlers = [
       );
     }
   ),
+
+  rest.get(
+    `${apiUrl}${paths.user}${paths.favorites}/${userTokenDataMock.id}`,
+    (_req, res, ctx) => {
+      return res(
+        ctx.status(200),
+        ctx.json({ favoriteCars: userTokenDataMock.favoriteCars })
+      );
+    }
+  ),
 ];
 
 export const errorHandlers = [
@@ -53,6 +63,13 @@ export const errorHandlers = [
 
   rest.post(
     `${apiUrl}${paths.user}${paths.favorites}${paths.remove}`,
+    (_req, res, ctx) => {
+      return res(ctx.status(401));
+    }
+  ),
+
+  rest.get(
+    `${apiUrl}${paths.user}${paths.favorites}/${userTokenDataMock.id}`,
     (_req, res, ctx) => {
       return res(ctx.status(401));
     }

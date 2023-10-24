@@ -1,24 +1,36 @@
 import { useEffect } from "react";
-import { useAppDispatch } from "../../store";
+import { useAppDispatch, useAppSelector } from "../../store";
 import HomepageStyled from "./HomepageStyled";
 import { loadCarsActionCreator } from "../../store/cars/carsSlice";
 import CarsList from "../../components/CarsList/CarsList";
 import useCars from "../../hooks/cars/useCars";
 import { CarBrandsDataStructure } from "../../store/cars/types";
+import useUser from "../../hooks/user/useUser";
+import { loadUserFavoritesActionCreator } from "../../store/user/userSlice";
 
 const Homepage = (): React.ReactElement => {
   const dispatch = useAppDispatch();
   const { getCars } = useCars();
+  const { getFavoriteCars } = useUser();
+  const { id } = useAppSelector((state) => state.user);
 
   useEffect(() => {
     const fetchData = async () => {
-      const carsList: CarBrandsDataStructure[] = await getCars();
+      if (!id) {
+        const carsList: CarBrandsDataStructure[] = await getCars();
 
-      dispatch(loadCarsActionCreator(carsList));
+        dispatch(loadCarsActionCreator(carsList));
+      } else {
+        const favoriteCars: string[] = await getFavoriteCars(id);
+        const carsList: CarBrandsDataStructure[] = await getCars();
+
+        dispatch(loadUserFavoritesActionCreator(favoriteCars));
+        dispatch(loadCarsActionCreator(carsList));
+      }
     };
 
     fetchData();
-  }, [dispatch, getCars]);
+  }, [dispatch, getCars, getFavoriteCars, id]);
 
   return (
     <HomepageStyled className="homepage-container">
