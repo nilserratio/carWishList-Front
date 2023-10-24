@@ -24,11 +24,20 @@ const userSlice = createSlice({
     logoutUser: (): UserFavoritesStructure => ({
       ...initialUserState,
     }),
+
+    addFavoriteCar: (
+      currentUserState: UserFavoritesStructure,
+      action: PayloadAction<string>
+    ): UserFavoritesStructure => ({
+      ...currentUserState,
+      favoriteCars: [...currentUserState.favoriteCars, action.payload],
+    }),
   },
 });
 
 export const {
   loginUser: loginUserActionCreator,
   logoutUser: logoutUserActionCreator,
+  addFavoriteCar: addFavoriteCarActionCreator,
 } = userSlice.actions;
 export const userReducer = userSlice.reducer;
